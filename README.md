@@ -1,6 +1,11 @@
 # book_app
 
-A new Flutter project.
+flutter_bloc
+freezed
+build_runner
+dio
+get_it
+clean architecture
 
 ## Getting Started
 
