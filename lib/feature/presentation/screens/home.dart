@@ -1,7 +1,9 @@
 import 'package:book_app/core/utils/app_constants.dart';
+import 'package:book_app/feature/presentation/bloc/bloc.dart';
+import 'package:book_app/service_locator.dart';
 import 'package:flutter/material.dart';
-import 'books_screen.dart';
-import 'components/book_title.dart';
+import 'screens.dart';
+import 'components.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -27,7 +29,7 @@ class HomeScreen extends StatelessWidget {
               color: kdarkblue,
             ),
             onPressed: () {
-              //context.read<AuthBloc>().add(const AuthEvent.logout());
+               serviceLocator<AuthBloc>().add(const AuthLogoutEvent());
             },
           ),
         ],

@@ -1,8 +1,12 @@
 import 'package:book_app/core/exception/failure.dart';
-import 'package:book_app/feature/domain/entities/book_model.dart';
+import 'package:book_app/feature/domain/entities/entities.dart';
 import 'package:dartz/dartz.dart';
 
-abstract class BookRepository{
+abstract class Repository{
+  Future<void> login(String email, String password);
+  Future<void> register(String email, String password);
+  Future<void> logout();
+
   Future<Either<Failure, Books>> getFictions();
   Future<Either<Failure, Books>> getNovels();
   Future<Either<Failure, Books>> getHorrors();

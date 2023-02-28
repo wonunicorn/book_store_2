@@ -1,4 +1,4 @@
-import 'package:book_app/feature/domain/entities/book_model.dart';
+import 'package:book_app/feature/domain/entities/entities.dart';
 import 'package:book_app/feature/domain/use_case/use_case.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

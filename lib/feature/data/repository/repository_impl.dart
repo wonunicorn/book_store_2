@@ -2,16 +2,16 @@ import 'dart:io';
 
 import 'package:book_app/core/exception/exception.dart';
 import 'package:book_app/core/exception/failure.dart';
-import 'package:book_app/feature/data/data_source/book_remote_data_source.dart';
-import 'package:book_app/feature/domain/entities/book_model.dart';
-import 'package:book_app/feature/domain/repository/book_repository.dart';
+import 'package:book_app/feature/data/data_source/remote_data_source.dart';
+import 'package:book_app/feature/domain/entities/entities.dart';
+import 'package:book_app/feature/domain/repository/repository.dart';
 import 'package:dartz/dartz.dart';
 
 
-class BooksRepositoryImpl extends BookRepository{
-  final BookRemoteDataSource baseBookRemoteDataSource;
+class RepositoryImpl extends Repository{
+  final RemoteDataSource baseBookRemoteDataSource;
 
-  BooksRepositoryImpl(this.baseBookRemoteDataSource);
+  RepositoryImpl(this.baseBookRemoteDataSource);
 
   @override
   Future<Either<Failure, Books>> getActions() async{
@@ -71,5 +71,20 @@ class BooksRepositoryImpl extends BookRepository{
     }on SocketException{
       return const Left(ConnectionFailure('Connection Failure'));
     }
+  }
+
+  @override
+  Future<void> login(String email, String password) {
+    return baseBookRemoteDataSource.login(email, password);
+  }
+
+  @override
+  Future<void> logout() {
+    return baseBookRemoteDataSource.logout();
+  }
+
+  @override
+  Future<void> register(String email, String password) {
+    return baseBookRemoteDataSource.register(email, password);
   }
 }
