@@ -1,10 +1,7 @@
-import 'package:book_app/feature/presentation/screens/books_screen/action_book_screen.dart';
-import 'package:book_app/feature/presentation/screens/books_screen/fiction_book_screen.dart';
-import 'package:book_app/feature/presentation/screens/books_screen/horror_book_screen.dart';
-import 'package:book_app/feature/presentation/screens/books_screen/novel_book_screen.dart';
-import 'package:book_app/feature/presentation/screens/components/book_title.dart';
 import 'package:book_app/core/utils/app_constants.dart';
 import 'package:flutter/material.dart';
+import 'books_screen.dart';
+import 'components/book_title.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
